@@ -1,0 +1,8 @@
+<% provide :title, t(".head") %>
+<h1><%= t ".head" %></h1>
+<p>
+  <%= t ".content" %>
+  <%= link_to Settings.links.railstutorial_help do %>
+    <em><%= t ".head" %></em>
+  <% end %>
+</p>
