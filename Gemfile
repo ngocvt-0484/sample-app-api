@@ -5,8 +5,10 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "2.7.1"
 
 gem "bootsnap", ">= 1.4.2", require: false
+gem "bootstrap-sass", "~> 3.4.1"
 gem "config"
 gem "jbuilder", "~> 2.7"
+gem "jquery-rails"
 gem "mysql2", "~> 0.5.2"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
@@ -33,7 +35,9 @@ group :test do
 end
 
 group :development, :test do
+  gem "rails_best_practices"
   gem "rubocop", "~> 0.74.0", require: false
+  gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
 end
 
