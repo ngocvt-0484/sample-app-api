@@ -2,6 +2,7 @@ en:
   title: "Ruby on Rails Tutorial Sample App"
   login: "Log in"
   signup: "Sign up"
+  logout: "Log out"
   static_pages:
     home:
       head: "Home"
@@ -19,7 +20,29 @@ en:
                 Ruby on Rails This is the sample app for the tutorial."
     contact:
       head: "Contact"
+      content: "Contact about"
   users:
     new:
       head: "Sign up now!"
       title: "This will be a signup page for new users."
+      submit: "Create my account"
+      error: "error"
+      notice_success: "Welcome to the Sample App!"
+      label_name: "Name"
+      label_email: "Email"
+      label_password: "Password"
+      label_confir_password: "Confirm password"
+    show:
+      head: "Show User"
+      setting: "Setting"
+      profile: "Profile"
+      account: "Account"
+      notice_error: "Somethings is wrong!"
+  sessions:
+    new:
+      new_user: "New user?"
+      error_login: "Invalid email/password combination!"
+      remember_user: "Remember me on this computer"
+      label_email: "Email"
+      label_password: "Password"
+      label_remember: "Remember"
