@@ -100,7 +100,7 @@ footer {
 }
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px solid $border-input;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -111,9 +111,9 @@ input {
 }
 
 #error_explanation {
-  color: red;
+  color: $error_explanation;
   ul {
-    color: red;
+    color: $error_explanation;
     margin: 0 0 30px 0;
   }
 }
