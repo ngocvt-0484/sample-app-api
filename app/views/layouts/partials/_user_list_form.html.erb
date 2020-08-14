@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for item, size: Settings.validations.users.size_avatar %>
+  <%= link_to item.name, item %>
+  <% if current_user.admin? && !current_user?(item) %>
+    <%= link_to t("users.edit.lable_delete"), item, method: :delete,
+                  data: { confirm: t("inform_confirmation") } %>
+  <% end %>
+</li>

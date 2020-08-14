@@ -1,0 +1,8 @@
+<% provide :title, t(".head") %>
+<h1><%= t(".head") %></h1>
+
+<ul class="users">
+  <%= render partial: "layouts/partials/user_list_form", collection: @users, as: "item" %>
+</ul>
+
+<%= paginate @users %>

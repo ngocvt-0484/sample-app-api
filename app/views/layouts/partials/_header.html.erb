@@ -3,24 +3,30 @@
     <%= link_to t("title"), home_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("static_pages.home.head"), home_path %></li>
-        <li><%= link_to t("static_pages.help.head"), help_path %></li>
+        <li>
+          <%= link_to t("static_pages.home.head"), home_path %>
+        </li>
+        <li>
+          <%= link_to t("static_pages.help.head"), help_path %>
+        </li>
         <% if logged_in? %>
-          <li class="dropdown">
-            <%= link_to "#" do %>
-              <%= t "users.show.account" %><b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu">
-              <li><%= link_to t("users.show.profile"), current_user %></li>
-              <li><%= link_to t("users.show.setting"), "#" %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to t("logout"), logout_path, method: :delete %>
-              </li>
-            </ul>
+          <li>
+            <%= link_to t("users.index.title_users"), users_path %>
+          </li>
+          <li>
+            <%= link_to t("users.show.profile"), current_user %>
+          </li>
+          <li>
+            <%= link_to t("users.show.setting"), edit_user_path(current_user)%>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <%= link_to t("logout"), logout_path, method: :delete %>
           </li>
         <% else %>
-          <li><%= link_to t("login"), login_path %></li>
+          <li>
+            <%= link_to t("login"), login_path %>
+          </li>
         <% end %>
       </ul>
     </nav>
