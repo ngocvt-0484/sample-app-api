@@ -1,0 +1,14 @@
+<% provide :title, t(".head") %>
+<% provide :btn_label, t("label_save_btn") %>
+<h1><%= t(".head") %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "layouts/partials/user_form" %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <%= link_to t(".change_email"), Settings.links.gravatar_email,
+                  target: "_blank", rel: "noopener noreferrer"
+      %>
+    </div>
+  </div>
+</div>

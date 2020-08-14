@@ -3,6 +3,11 @@ en:
   login: "Log in"
   signup: "Sign up"
   logout: "Log out"
+  label_save_btn: "Save"
+  inform_error: "Opp!Somethings is wrong!"
+  inform_success: "Success!"
+  inform_login: "Please log in."
+  inform_confirmation: "Are you sure?"
   static_pages:
     home:
       head: "Home"
@@ -38,6 +43,17 @@ en:
       profile: "Profile"
       account: "Account"
       notice_error: "Somethings is wrong!"
+    edit:
+      head: "Edit User"
+      label_name: "Name"
+      label_email: "Email"
+      label_password: "Password"
+      label_confirm_password: "Confirmation Password"
+      change_email: "Change"
+      lable_delete: "Delete"
+    index:
+      head: "All users"
+      title_users: "Users"
   sessions:
     new:
       new_user: "New user?"
@@ -46,3 +62,26 @@ en:
       label_email: "Email"
       label_password: "Password"
       label_remember: "Remember"
+  form:
+    label_name: "Name"
+    label_email: "Email"
+    label_password: "Password"
+    label_confirm_password: "Confirmation Password"
+    change_email: "Change"
+    label_remember: "Remember"
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
+    helpers:
+      page_entries_info:
+        one_page:
+          display_entries:
+            zero: "No %{entry_name} found"
+            one: "Displaying <b>1</b> %{entry_name}"
+            other: "Displaying <b>all %{count}</b> %{entry_name}"
+        more_pages:
+          display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
