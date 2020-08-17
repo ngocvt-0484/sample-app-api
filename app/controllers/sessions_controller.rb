@@ -21,9 +21,11 @@ class SessionsController < ApplicationController
   def activate user
     if user.activated?
       log_in user
-      params[:session][:remember_me] ==
-          Settings.validations.users.remember_true ? remember(user)
-          : forget(user)
+      if params[:session][:remember_me] == Settings.validations.users.remember
+        remember user
+      else
+        forget user
+      end
       redirect_back_or user
     else
       flash[:warning] = t "mail.inform_confirmation_email"
