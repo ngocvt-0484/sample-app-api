@@ -17,8 +17,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t "users.new.notice_success"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t "mail.inform_confirmation_email"
+      redirect_to root_url
     else
       flash.now[:danger] = t "users.show.notice_error"
       render :new
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
       flash[:success] = t "inform_success"
       redirect_to @user
     else
-      flash.now[:danger] = t "inform_success"
+      flash.now[:danger] = t "inform_error"
       render :edit
     end
   end
