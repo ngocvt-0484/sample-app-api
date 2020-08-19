@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
+  has_many :microposts, dependent: :destroy
+
   validates :name, presence: true,
             length: {maximum: Settings.validations.users.name_max_length}
   validates :email, presence: true,
@@ -70,6 +72,10 @@ class User < ApplicationRecord
   def create_reset_digest
     self.reset_token = User.new_token
     update reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
+  end
+
+  def feed
+    Micropost.by_created_at.by_user id
   end
 
   private
