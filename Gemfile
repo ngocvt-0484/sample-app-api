@@ -25,6 +25,12 @@ gem "sassc-rails", ">= 2.1.0"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
+
+gem "grape"
+
+# run rake grape:routes to see all routes for api
+gem "grape_on_rails_routes"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "pry", "~> 0.12.2"
