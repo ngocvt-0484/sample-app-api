@@ -8,6 +8,24 @@ module API
         version "v1", using: :path
         default_format :json
         format :json
+
+        rescue_from ActiveRecord::RecordNotFound do |e|
+          error_response(message: e.message, status: 404)
+        end
+
+        rescue_from :all do |e|
+           if Rails.env.development?
+            raise e
+          else
+            error_response(message: e.message, status: 500)
+          end
+        end
+
+        helpers do
+          def api_error! message, error_code, status, header
+            error!({message: message, code: error_code}, status, header)
+          end
+        end
       end
     end
   end
