@@ -14,7 +14,8 @@ module API
           requires :id, type: String, desc: "ID of the user"
         end
         get ":id", root: "user" do
-          User.where(id: params[:id]).first
+          user = User.find_by_id params[:id]
+          UserSerializer.new(user).serializable_hash
         end
       end
     end
