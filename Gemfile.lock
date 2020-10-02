@@ -133,6 +133,8 @@ GEM
     execjs (2.7.0)
     faker (2.13.0)
       i18n (>= 1.6, < 2)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.13.1)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -342,6 +344,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   config
   faker
+  fast_jsonapi
   figaro
   grape
   grape_on_rails_routes
