@@ -15,7 +15,11 @@ module API
         end
         get ":id", root: "user" do
           user = User.find_by_id params[:id]
-          UserSerializer.new(user).serializable_hash
+          if user
+            UserSerializer.new(user).serializable_hash
+          else
+            api_error! "User not found", "failure", 404, {}
+          end
         end
       end
     end
