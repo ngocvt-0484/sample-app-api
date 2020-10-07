@@ -3,10 +3,15 @@ module API
     class Users < Grape::API
       include API::V1::Defaults
 
+      before do
+        authenticate_user!
+      end
+
       resource :users do
         desc "Return all users"
         get "", root: :users do
-          User.all
+          users = User.all
+          present users, with: API::Entities::User
         end
 
         desc "Return a user"
@@ -14,12 +19,8 @@ module API
           requires :id, type: String, desc: "ID of the user"
         end
         get ":id", root: "user" do
-          user = User.find_by_id params[:id]
-          if user
-            UserSerializer.new(user).serializable_hash
-          else
-            api_error! "User not found", "failure", 404, {}
-          end
+          user = User.find params[:id]
+          present user, with: API::Entities::User
         end
       end
     end
